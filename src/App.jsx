@@ -8,7 +8,7 @@ function App() {
   
   return (
     <>
-      <QuestionPage index={3} />
+      <QuestionPage index={2} />
     </>
   );
 }
