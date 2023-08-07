@@ -39,16 +39,16 @@ export default function QuestionPage(props) {
 
     return (
         <div >
-            <div className="px-12">
-                <div className="max-w-[85%] min-h-screen rounded md:rounded-full bg-[#c0c0c065] m-auto  mb-0 pb-10">
+            <div className="px-3 border-8 border-[#c0c0c082]">
+                <div className="max-w-[95%] max-h-fit rounded md:rounded-full bg-[#c0c0c050] m-auto md: my-9 max-w-[85%]">
                     <div className='qCard'>
                         {qno < questions.length && qno >= 0 && (
-                            <div className="font-Helvectica text-center max-w-[340px] m-auto flex-col overflow-hidden flex-wrap show" id="fade-in">
-                                <h3 className="font-semibold text-2xl pt-32">{questions[qno].question}</h3>
+                            <div className="font-Helvectica text-center max-w-[250px] m-auto flex-col overflow-hidden flex-wrap  md:max-w-[340px] show" id="fade-in">
+                                <h3 className="font-semibold text-2xl pt-40">{questions[qno].question}</h3>
                                 {questions[qno].options.map(opt => {
 
                                     return (
-                                        <div className="h-[70px] max-w-[340px] px-[15px] pt-[25px] shadow-md bg-white my-5 rounded-xl" onClick={handleClick}>
+                                        <div className="h-[75px] max-w-[220px] px-[15px] pt-[5px] pb-[5px] shadow-md  bg-white mt-10 mb-9 mx-auto rounded-xl text-sm  md:h-[90px] md:max-w-[340px] md:px-[15px] md:pt-[18px] md:pb-[4px] md:text-lg border-4 border-[#c0c0c065] hover:bg-[#ffffffc4] text-center" onClick={handleClick}>
                                             {opt.option}
                                         </div>)
                                 })}
