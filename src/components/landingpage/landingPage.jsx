@@ -1,5 +1,6 @@
 import React from "react";
 import "./landingPage.css";
+import { Link } from "react-router-dom";
 
 function LandingPage() {
   return (
@@ -24,14 +25,21 @@ function LandingPage() {
           </p>
         </div>
         <div class="max-w-[80%] flex md:flex md:w-[80%] mt-14 justify-center space-x-14 m-auto">
+
           <div class=" h-36 w-36 rounded-full text-center bg-[#800000]  drop-shadow-xl">
-            <div class="pt-[4rem] text-white">Text</div>
+            <Link to={"/assess"}>
+              <div class="pt-[4rem] text-white">Text</div>
+            </Link>
           </div>
-          <div class=" h-36 w-36 rounded-full text-center bg-[#800000] drop-shadow-xl">
-            <div class="pt-[4rem] text-white">Text</div>
+          <div class=" h-36 w-36 rounded-full text-center bg-[#800000]  drop-shadow-xl">
+            <Link to={"/assess"}>
+              <div class="pt-[4rem] text-white">Text</div>
+            </Link>
           </div>
-          <div class=" h-36 w-36 rounded-full text-center bg-[#800000] drop-shadow-xl">
-            <div class="pt-[4rem] text-white">Text</div>
+          <div class=" h-36 w-36 rounded-full text-center bg-[#800000]  drop-shadow-xl">
+            <Link to={"/assess"}>
+              <div class="pt-[4rem] text-white">Text</div>
+            </Link>
           </div>
         </div>
         <br />
