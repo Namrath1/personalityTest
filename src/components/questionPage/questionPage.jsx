@@ -40,21 +40,22 @@ export default function QuestionPage(props) {
     return (
         <div >
             <div className="px-3 border-8 border-[#c0c0c082]">
-                <div className="max-w-[95%] max-h-fit rounded md:rounded-full bg-[#c0c0c050] m-auto md: my-9 max-w-[85%]">
+                <div className="max-w-[95%] max-h-fit rounded md:rounded-full bg-[#c0c0c050] m-auto md:my-9 mdmax-w-[85%]">
                     <div className='qCard'>
                         {qno < questions.length && qno >= 0 && (
-                            <div className="font-Helvectica text-center max-w-[250px] m-auto flex-col overflow-hidden flex-wrap  md:max-w-[400px] show" id="fade-in">
-                                <h3 className="font-semibold text-2xl pt-40">{questions[qno].question}</h3>
+                            <div className="font-Helvectica text-center max-w-[250px] m-auto flex-col overflow-hidden flex-wrap  md:max-w-[400px]  show" id="fade-in">
+                                <h3 className="font-semibold text-lg pt-40 mb-10 md:text-2xl ">{questions[qno].question}</h3>
                                 {questions[qno].options.map(opt => {
 
                                     return (
-                                        <div className="h-[75px] max-w-[220px] px-[15px] pt-[5px] pb-[5px] shadow-md  bg-white mt-10 mb-9 mx-auto rounded-xl text-sm  md:h-[90px] md:max-w-[400px] md:px-[15px] md:pt-[18px] md:pb-[4px] md:text-lg border-4 border-[#c0c0c065] hover:bg-[#ffffffc4] text-center" onClick={handleClick}>
+                                        <div className="h-[75px] max-w-[290px] px-[15px] py-2 shadow-md  bg-white  mb-5 mx-auto rounded-xl text-sm  md:h-[90px] md:max-w-[400px] md:px-[15px] md:pt-[18px] md:pb-[4px] md:text-lg border-4 border-[#c0c0c065] hover:bg-[#ffffffc4] text-center " onClick= {handleClick}>
                                             {opt.option}
                                         </div>)
                                 })}
+                                <button className="h-10 w-20 -ml-44 mt-3 mb-8 border-4 border-[#c0c0c065]  hover:bg-[#ffffffc4] text-black md:-ml-80 rounded-xl md:mt-2 bg-white md:px-5 md:h-14 md:w-30 md:mb-20" onClick={getBack}>Back</button>
                             </div>
                         )}
-                        <button onClick={getBack}>Back</button>
+                        
                     </div>
                 </div>
             </div>
