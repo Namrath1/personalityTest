@@ -1,14 +1,20 @@
 import { useState } from "react";
 import LandingPage from "./components/landingpage/landingPage";
 import QuestionPage from "./components/questionPage/questionPage";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0);
   
+
   return (
     <>
-      <QuestionPage index={0} />
+      <Router>
+        <Routes>
+          <Route path="/assess" element={<QuestionPage index={0} />} exact />
+          <Route path="/" element={<LandingPage />} />
+        </Routes>
+      </Router>
+      
     </>
   );
 }
