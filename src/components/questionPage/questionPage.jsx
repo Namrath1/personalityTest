@@ -1,10 +1,30 @@
 import { useState } from "react";
 import questions from "../../assets/questions";
+import axios from "axios";
 
 export default function QuestionPage(props) {
     const [qno, setQno] = useState(props.index);
     const [selectedAnswers,setAnswers] = useState(new Map());
+    const [email,setEmail] = useState("");
+    const [name,setName] = useState("");
 
+    const handleSubmit = (e) =>{
+        const body = {
+            "name" : name,
+            "email" : email,
+            results : selectedAnswers
+        }
+        console.log(body);
+
+        axios.get("http://localhost:3000")
+        .then(resp=>{
+            console.log(resp);
+        })
+        .catch(err=>{
+            console.log(err);
+        });
+
+    }
 
     const handleClick = (e) => {
         
@@ -18,7 +38,11 @@ export default function QuestionPage(props) {
             setTimeout(() => {
                 ele.classList.toggle("show");
                 setQno(prev => prev + 1);
-            }, 1070)
+            }, 900)
+        }
+        else if(qno == questions.length-1){
+            
+            handleSubmit();
         }
 
     }
@@ -29,7 +53,7 @@ export default function QuestionPage(props) {
             setTimeout(() => {
                 ele.classList.toggle("show");
                 setQno(prev => prev - 1);
-            }, 1070)
+            }, 900)
             
         }
     }
