@@ -26,17 +26,17 @@ function LandingPage() {
         </div>
         <div class="flex flex-col mt-5 mr-28 pb-20 px-10 md:flex md:flex-row max-w-[50%] mx-auto md:justify-center md:space-x-10 md:mx-auto ">
           <div class=" h-36 w-36 mt-7  rounded-full text-center bg-[#800000]  drop-shadow-xl ">
-            <Link to={"/access"}>
+            <Link to={"/assess"}>
               <div class="pt-[4rem] text-white">Text</div>
             </Link>
           </div>
           <div class=" h-36 w-36 mt-7  rounded-full text-center bg-[#800000]  drop-shadow-xl ">
-            <Link to={"/access"}>
+            <Link to={"/assess"}>
               <div class="pt-[4rem] text-white">Text</div>
             </Link>
           </div>
           <div class=" h-36 w-36 mt-7 rounded-full text-center bg-[#800000]  drop-shadow-xl ">
-            <Link to={"/access"}>
+            <Link to={"/assess"}>
               <div class="pt-[4rem] text-white">Text</div>
             </Link>
           </div>
