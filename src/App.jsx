@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LandingPage from "./components/landingpage/landingPage";
 import QuestionPage from "./components/questionPage/questionPage";
+import EndPage from "./components/endPage/endPage"
 
 
 function App() {
@@ -8,7 +9,9 @@ function App() {
   
   return (
     <>
-      <QuestionPage index={0} />
+      <LandingPage/>
+      <QuestionPage index={0}/>
+      <EndPage/>
     </>
   );
 }
