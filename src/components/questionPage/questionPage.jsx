@@ -5,18 +5,23 @@ import axios from "axios";
 export default function QuestionPage(props) {
     const [qno, setQno] = useState(props.index);
     const [selectedAnswers,setAnswers] = useState(new Map());
+    const [results,setResults] = useState([]);
     const [email,setEmail] = useState("");
     const [name,setName] = useState("");
 
     const handleSubmit = (e) =>{
+        selectedAnswers.forEach((value,ques)=>{
+            setResults((prev)=> [...prev,{ques,value}])
+        })
+        console.log(results,"Ok");
         const body = {
             "name" : name,
             "email" : email,
-            results : selectedAnswers
+            "results" : results
         }
-        console.log(body);
+        
 
-        axios.get("http://localhost:3000")
+        axios.post("http://localhost:3000/assess",body)
         .then(resp=>{
             console.log(resp);
         })
@@ -40,7 +45,7 @@ export default function QuestionPage(props) {
                 setQno(prev => prev + 1);
             }, 900)
         }
-        else if(qno == questions.length-1){
+        if(qno == questions.length-1){
             
             handleSubmit();
         }
