@@ -10,8 +10,7 @@ function App() {
       
       <Router>
         <Routes>
-          <Route path="/access" element={<QuestionPage index={0} />} exact />
-          <Route path="/results" element={<EndPage />} />
+          <Route path="/assess" element={<QuestionPage index={0} />} exact />
           <Route path="/" element={<LandingPage />} />
 
         </Routes>
