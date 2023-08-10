@@ -28,19 +28,19 @@ function LandingPage() {
         
         <div class="flex flex-col mt-5 mx-[4.5rem] pb-20 flex-wrap content-around md:flex md:flex-row md:justify-center md:space-x-10 md:mx-auto ">
           <div class=" h-32 w-32 md:h-36 md:w-36 mt-7  rounded-full text-center bg-[#800000]  drop-shadow-xl ">
-            <Link to={"/access"}>
+            <Link to={"/assess"}>
               <div class=" py-[3.3rem] md:pt-[4rem] px-5 text-white">Exploring</div>
             </Link>
           </div>
          
           <div class=" h-32 w-32 md:h-36 md:w-36 mt-7  rounded-full text-center bg-[#800000]  drop-shadow-xl ">
-            <Link to={"/access"}>
+            <Link to={"/assess"}>
               <div class=" pt-11 md:py-[3.3rem] px-6 text-white">Aspiring Director</div>
             </Link>
           </div>
          
           <div class=" h-32 w-32 md:h-36 md:w-36 mt-7 rounded-full text-center bg-[#800000]  drop-shadow-xl ">
-            <Link to={"/access"}>
+            <Link to={"/assess"}>
               <div class=" pt-11 md:py-[3.3rem] px-6 text-white">Existing Director</div>
             </Link>
           </div>
