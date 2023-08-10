@@ -2,11 +2,11 @@ import React from "react";
 import "./endPage.css";
 function EndPage() {
   return (
-      <div className=" px-2 border-8 border-[#c0c0c082]">
+      <div className=" px-3">
         <div className=" mt-7 flex justify-center sticky">
         <img
           class="mx-10 mb-3 h-16 mt-10"
-          src="src\assets\NxGen Full Logo final file.svg"
+          src="src\assets\logo.svg"
           alt="logo.svg"
         />
         </div>

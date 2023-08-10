@@ -63,7 +63,7 @@ export default function QuestionPage(props) {
 
     return (
         <div >
-            <div className="px-3 border-8 border-[#c0c0c082]">
+            <div className="px-3">
                 <div className="max-w-[95%] max-h-fit rounded md:rounded-full bg-[#c0c0c050] m-auto md:my-9 mdmax-w-[85%]">
                     <div className='qCard'>
                         {qno < questions.length && qno >= 0 && (
@@ -72,7 +72,7 @@ export default function QuestionPage(props) {
                                 {questions[qno].options.map(opt => {
 
                                     return (
-                                        <div className="h-[75px] max-w-[290px] px-[15px] py-2 shadow-md  bg-white  mb-5 mx-auto rounded-xl text-sm  md:h-[90px] md:max-w-[400px] md:px-[15px] md:pt-[18px] md:pb-[4px] md:text-lg border-4 border-[#c0c0c065] hover:bg-[#ffffffc4] text-center " onClick= {handleClick}>
+                                        <div className="h-[75px] max-w-[290px] px-[15px] py-2 shadow-md  bg-white  mb-5 mx-auto rounded-xl text-sm  md:h-[90px] md:max-w-[400px] md:px-[15px] md:pt-[18px] md:pb-[4px] md:text-lg border-4 border-[#c0c0c065] hover:bg-[#ffffffc4] text-center  cursor-pointer " onClick= {handleClick}>
                                             {opt.option}
                                         </div>)
                                 })}
