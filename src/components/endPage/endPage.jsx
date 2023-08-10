@@ -3,18 +3,18 @@ import "./endPage.css";
 
 function EndPage({handleSubmit,name,setName,email,setEmail}) {
   return (
-      <div className=" px-2">
+     
       <div className=" px-3">
-        <div className=" mt-7 flex justify-center sticky">
+        <div className=" mt-3 flex justify-center sticky">
         <img
-          class="mx-10 mb-3 h-16 mt-10"
+          class="mx-10 mb-3 h-16 mt-3"
           src="src\assets\logo.svg"
           alt="logo.svg"
         />
         </div>
         
           <div className="pb-16  m-auto md:max-w-[340px]">
-            <div className="pt-44 mb-9 mt-10 ">
+            <div className="py-5 mb-9 mt-4 ">
              <p className="text-center font-[620] text-xl md:text-2xl">Congratulations on completing the quiz! <br /> Now claim your results.</p> 
             </div>
             <div className="flex flex-col overflow-hidden">
