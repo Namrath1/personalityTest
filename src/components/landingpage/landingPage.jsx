@@ -1,14 +1,15 @@
 import React from "react";
 import "./landingPage.css";
 import { Link } from "react-router-dom";
-
+import nxGenLogo from "../../assets/nxGenLogo.svg"
 function LandingPage() {
   return (
     <div class="px-3">
       <nav class="flex justify-center md:justify-start pt-3">
+      
           <img
             class="mx-10 mb-3 h-16"
-            src="src\assets\logo.svg"
+            src={nxGenLogo}
             alt="logo.svg"
           />
         </nav>
