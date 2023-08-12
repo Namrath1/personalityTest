@@ -6,7 +6,7 @@ import EndPage from "../endPage/endPage";
 import FilledCircle from "../../assets/loader.png";
 import EmptyCirle from "../../assets/radiusLoader.png";
 import BackButton from "../../assets/backButton.png";
-import LogoRipple from "../../assets/logoRipple.gif";
+import LogoRipple from "../../assets/logoAnimated.gif";
 
 
 export default function QuestionPage(props) {
@@ -16,7 +16,8 @@ export default function QuestionPage(props) {
     const [results, setResults] = useState([]);
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
-
+    const mainUrl = "https://lsbackend.onrender.com/assess";
+    const testUrl = "http://localhost:3000"; 
 
     const handleSubmit = (e) => {
         console.log(results);
@@ -31,7 +32,7 @@ export default function QuestionPage(props) {
 
         console.log(body);
 
-        axios.post("https://lsbackend.onrender.com/assess", body)
+        axios.post(mainUrl+"/assess", body)
             .then(resp => {
                 console.log(resp);
             })
@@ -121,7 +122,7 @@ export default function QuestionPage(props) {
                                                             color="#800000"
                                                             src={EmptyCirle}
                                                             alt="radiusLoader.svg"
-                                                            className="my-20 mx-1"
+                                                            className="my-20 ml-2"
                                                         />
                                                     </>
                                                 )
@@ -133,11 +134,11 @@ export default function QuestionPage(props) {
                                 </div>
                                 <div className="flex justify-center">
                                     <img
-                                        width="35px"
+                                        width="43px"
                                         color="#800000"
                                         src={LogoRipple}
                                         alt="radiusLoader.svg"
-                                        className=" -mt-1 mb-6"
+                                        className="mb-6"
                                     />
                                 </div>
                                 <h3 className="font-semibold text-lg pt-5 mb-10 md:text-2xl text-[#800000] ">{questions[qno].question}</h3>
