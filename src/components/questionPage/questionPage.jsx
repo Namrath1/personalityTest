@@ -16,7 +16,7 @@ export default function QuestionPage(props) {
     const [results, setResults] = useState([]);
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
-    const mainUrl = "https://lsbackend.onrender.com/assess";
+    const mainUrl = "https://lsbackend.onrender.com";
     const testUrl = "http://localhost:3000"; 
 
     const handleSubmit = (e) => {
