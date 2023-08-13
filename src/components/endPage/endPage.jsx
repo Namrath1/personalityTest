@@ -1,5 +1,6 @@
 import React from "react";
 import "./endPage.css";
+import nxGenLogo from "../../assets/nxGenLogo.svg"
 
 function EndPage({handleSubmit,name,setName,email,setEmail}) {
   return (
@@ -8,7 +9,7 @@ function EndPage({handleSubmit,name,setName,email,setEmail}) {
         <div className=" mt-3 flex justify-center sticky">
         <img
           class="mx-10 mb-3 h-16 mt-3"
-          src="src\assets\logo.svg"
+          src={nxGenLogo}
           alt="logo.svg"
         />
         </div>
@@ -25,7 +26,7 @@ function EndPage({handleSubmit,name,setName,email,setEmail}) {
                   setEmail(e.target.value);
                 }}/>
 
-                <button className="w-[180px] h-[50px] mx-auto border-4 border-[#c0c0c065] bg-[#800000d0] rounded-xl hover:bg-[#ffffffc4] text-white md:w-[200px] md:h-[60px]" onClick={handleSubmit}>
+                <button className="w-[180px] h-[50px] mx-auto border-4 border-[#c0c0c065] bg-[#800000d0] rounded-xl  text-white md:w-[200px] md:h-[60px]" onClick={handleSubmit}>
                     Show Me My Results!
                 </button>
                 

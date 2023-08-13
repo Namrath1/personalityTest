@@ -13,3 +13,9 @@
     opacity: 1;
     width: max-content;
 }
+
+html{
+    background-image: url('./assets/backgroundGrey.png');
+    background-attachment: fixed;
+    background-size: cover;
+}

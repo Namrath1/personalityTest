@@ -1,15 +1,23 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 import questions from "../../assets/questions";
 import axios from "axios";
 import EndPage from "../endPage/endPage";
+import FilledCircle from "../../assets/loader.png";
+import EmptyCirle from "../../assets/radiusLoader.png";
+import BackButton from "../../assets/backButton.png";
+import LogoRipple from "../../assets/logoAnimated.gif";
+
 
 export default function QuestionPage(props) {
+    const navigate = useNavigate();
     const [qno, setQno] = useState(props.index);
     const [selectedAnswers, setAnswers] = useState(new Map());
     const [results, setResults] = useState([]);
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
-
+    const mainUrl = "https://lsbackend.onrender.com";
+    const testUrl = "http://localhost:3000"; 
 
     const handleSubmit = (e) => {
         console.log(results);
@@ -24,7 +32,7 @@ export default function QuestionPage(props) {
 
         console.log(body);
 
-        axios.post("https://lsbackend.onrender.com/assess", body)
+        axios.post(mainUrl+"/assess", body)
             .then(resp => {
                 console.log(resp);
             })
@@ -34,12 +42,12 @@ export default function QuestionPage(props) {
     }
 
     const handleClick = (e) => {
-        const val = {"select" : e.target.innerText,"pts" :e.target.id};
-       
+        const val = { "select": e.target.innerText, "pts": e.target.id };
+
         setResults([]);
         selectedAnswers.set(qno, val);
         selectedAnswers.forEach((value, ques) => {
-            setResults((prev) => [...prev, { ques,value}])
+            setResults((prev) => [...prev, { ques, value }])
         })
         const ele = document.querySelector("#fade-in");
         ele.classList.toggle("show");
@@ -48,10 +56,13 @@ export default function QuestionPage(props) {
             setQno(prev => prev + 1);
         }, 900);
 
-        
+
 
     }
     const getBack = (e) => {
+        if(qno === 0){
+           navigate("/")
+        }
         if (qno > 0) {
             const ele = document.querySelector("#fade-in");
             ele.classList.toggle("show");
@@ -61,6 +72,7 @@ export default function QuestionPage(props) {
             }, 900)
 
         }
+
     }
 
 
@@ -69,19 +81,75 @@ export default function QuestionPage(props) {
     return (
         <div >
             <div className="px-3">
-                <div className="max-w-[95%] max-h-fit rounded md:rounded-full bg-[#c0c0c050] m-auto md:my-9 mdmax-w-[85%]">
+                <div className="max-w-[95%] max-h-fit rounded md:rounded-full m-auto md:my-9  md:max-w-[85%]">
                     <div className='qCard'>
+
+
+
                         {qno < questions.length && qno >= 0 ? (
-                            <div className="font-Helvectica text-center max-w-[250px] m-auto flex-col overflow-hidden flex-wrap  md:max-w-[400px]  show" id="fade-in">
-                                <h3 className="font-semibold text-lg pt-40 mb-10 md:text-2xl text-[#800000] ">{questions[qno].question}</h3>
+                            <div className="font-Helvectica  text-center max-w-[250px] m-auto flex-col overflow-hidden flex-wrap  md:max-w-[500px]  show mb-10" id="fade-in">
+
+                                <div className="flex justify-center">
+                                    <div className="w-[20%] cursor-pointer" onClick={getBack}>
+
+                                        <img
+                                            width="17px"
+                                            color="#800000"
+                                            src={BackButton}
+                                            alt="logo.svg"
+                                            className="my-20 "
+
+                                        />
+                                    </div>
+                                    <div className="w-[80%] flex ml-[20%]">
+                                        {questions.map((val, idx) => {
+                                            if (idx < qno) {
+                                                return (<>
+                                                    <img
+                                                        width="15px"
+                                                        color="#800000"
+                                                        src={FilledCircle}
+                                                        alt="logo.svg"
+                                                        className="my-20 ml-1 md:ml-4"
+                                                    />
+                                                </>)
+                                            }
+                                            else {
+                                                return (
+                                                    <>
+                                                        <img
+                                                            width="15px"
+                                                            color="#800000"
+                                                            src={EmptyCirle}
+                                                            alt="radiusLoader.svg"
+                                                            className="my-20 ml-1 md:ml-4"
+                                                        />
+                                                    </>
+                                                )
+                                            }
+                                        })}
+                                    </div>
+
+
+                                </div>
+                                <div className="flex justify-center">
+                                    <img
+                                        width="53px"
+                                        color="#800000"
+                                        src={LogoRipple}
+                                        alt="radiusLoader.svg"
+                                        className="mb-6"
+                                    />
+                                </div>
+                                <h3 className="font-semibold text-lg pt-5 mb-10 md:text-2xl text-[#800000] ">{questions[qno].question}</h3>
                                 {questions[qno].options.map(opt => {
-                                    
+
                                     return (
-                                        <div className="h-[75px] max-w-[290px] px-[15px] py-2 shadow-md  bg-white  mb-5 mx-auto rounded-xl text-sm  md:h-[90px] md:max-w-[400px] md:px-[15px] md:pt-[18px] md:pb-[4px] md:text-lg border-4 border-[#c0c0c065] hover:border-[#762a2a] hover:text-white hover:bg-[#800000d0] text-center  cursor-pointer " onClick={handleClick} id={opt.pts} >
+                                        <div className="h-[75px] max-w-[290px] px-[15px] py-2 shadow-md  bg-white  mb-5 mx-auto rounded-xl text-sm  md:h-[90px] md:max-w-[400px] md:px-[15px] md:pt-[18px] md:pb-[4px] md:text-lg border-2 border-[#c0c0c065] hover:border-[#762a2a] hover:text-white hover:bg-[#800000d0] text-center  cursor-pointer " onClick={handleClick} id={opt.pts} >
                                             {opt.option}
                                         </div>)
                                 })}
-                                <button className="h-10 w-20 -ml-44 mt-3 mb-8 border-4 border-[#c0c0c065]   hover:border-[#762a2a] hover:text-white hover:bg-[#800000d0] text-black md:-ml-80 rounded-xl md:mt-2 bg-white md:px-5 md:h-14 md:w-30 md:mb-20" onClick={getBack}>Back</button>
+
                             </div>
                         ) :
                             (<>
