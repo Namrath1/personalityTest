@@ -81,7 +81,7 @@ export default function QuestionPage(props) {
     return (
         <div >
             <div className="px-3">
-                <div className="max-w-[95%] max-h-fit bg-[#c0c0c065] rounded md:rounded-full m-auto md:my-9  md:max-w-[85%]">
+                <div className="max-w-[95%] max-h-fit rounded md:rounded-full m-auto md:my-9  md:max-w-[85%]">
                     <div className='qCard'>
 
 
@@ -110,7 +110,7 @@ export default function QuestionPage(props) {
                                                         color="#800000"
                                                         src={FilledCircle}
                                                         alt="logo.svg"
-                                                        className="my-20 ml-1 md:ml-2"
+                                                        className="my-20 ml-1 md:ml-4"
                                                     />
                                                 </>)
                                             }
@@ -122,7 +122,7 @@ export default function QuestionPage(props) {
                                                             color="#800000"
                                                             src={EmptyCirle}
                                                             alt="radiusLoader.svg"
-                                                            className="my-20 ml-1 md:ml-2"
+                                                            className="my-20 ml-1 md:ml-4"
                                                         />
                                                     </>
                                                 )
