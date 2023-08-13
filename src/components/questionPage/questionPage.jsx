@@ -81,13 +81,13 @@ export default function QuestionPage(props) {
     return (
         <div >
             <div className="px-3">
-                <div className="max-w-[95%] max-h-fit rounded md:rounded-full bg-[#c0c0c065] m-auto md:my-9  md:max-w-[85%]">
+                <div className="max-w-[95%] max-h-fit bg-[#c0c0c065] rounded md:rounded-full m-auto md:my-9  md:max-w-[85%]">
                     <div className='qCard'>
 
 
 
                         {qno < questions.length && qno >= 0 ? (
-                            <div className="font-Helvectica text-center max-w-[250px] m-auto flex-col overflow-hidden flex-wrap  md:max-w-[400px]  show mb-10" id="fade-in">
+                            <div className="font-Helvectica  text-center max-w-[250px] m-auto flex-col overflow-hidden flex-wrap  md:max-w-[500px]  show mb-10" id="fade-in">
 
                                 <div className="flex justify-center">
                                     <div className="w-[20%] cursor-pointer" onClick={getBack}>
@@ -110,7 +110,7 @@ export default function QuestionPage(props) {
                                                         color="#800000"
                                                         src={FilledCircle}
                                                         alt="logo.svg"
-                                                        className="my-20 mx-1"
+                                                        className="my-20 ml-1 md:ml-2"
                                                     />
                                                 </>)
                                             }
@@ -122,7 +122,7 @@ export default function QuestionPage(props) {
                                                             color="#800000"
                                                             src={EmptyCirle}
                                                             alt="radiusLoader.svg"
-                                                            className="my-20 ml-2"
+                                                            className="my-20 ml-1 md:ml-2"
                                                         />
                                                     </>
                                                 )
@@ -134,7 +134,7 @@ export default function QuestionPage(props) {
                                 </div>
                                 <div className="flex justify-center">
                                     <img
-                                        width="43px"
+                                        width="53px"
                                         color="#800000"
                                         src={LogoRipple}
                                         alt="radiusLoader.svg"
@@ -145,7 +145,7 @@ export default function QuestionPage(props) {
                                 {questions[qno].options.map(opt => {
 
                                     return (
-                                        <div className="h-[75px] max-w-[290px] px-[15px] py-2 shadow-md  bg-white  mb-5 mx-auto rounded-xl text-sm  md:h-[90px] md:max-w-[400px] md:px-[15px] md:pt-[18px] md:pb-[4px] md:text-lg border-4 border-[#c0c0c065] hover:border-[#762a2a] hover:text-white hover:bg-[#800000d0] text-center  cursor-pointer " onClick={handleClick} id={opt.pts} >
+                                        <div className="h-[75px] max-w-[290px] px-[15px] py-2 shadow-md  bg-white  mb-5 mx-auto rounded-xl text-sm  md:h-[90px] md:max-w-[400px] md:px-[15px] md:pt-[18px] md:pb-[4px] md:text-lg border-2 border-[#c0c0c065] hover:border-[#762a2a] hover:text-white hover:bg-[#800000d0] text-center  cursor-pointer " onClick={handleClick} id={opt.pts} >
                                             {opt.option}
                                         </div>)
                                 })}

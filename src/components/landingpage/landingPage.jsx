@@ -5,7 +5,7 @@ import nxGenLogo from "../../assets/nxGenLogo.svg"
 function LandingPage() {
   return (
     <div class="px-3">
-      <nav class="flex justify-center md:justify-start pt-3">
+      <nav class="flex justify-center  md:justify-start pt-3">
       
           <img
             class="mx-10 mb-3 h-16"
@@ -13,7 +13,7 @@ function LandingPage() {
             alt="logo.svg"
           />
         </nav>
-      <div class="max-w-[95%] min-h-fit rounded md:rounded-full bg-[#c0c0c065] m-auto -mt-20">
+      <div class="max-w-[95%] min-h-fit bg-[#c0c0c065] rounded md:rounded-full m-auto -mt-20">
         
         <div class="font-Helvectica text-center md:max-w-[450px] m-auto ">
           <p class=" font-bold text-[maroon] pt-36 text-lg md:text-3xl">
